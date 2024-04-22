@@ -1,5 +1,22 @@
 # Bubble Bench
 
+## Table
+
+| Iterations | Nanoseconds per operation |
+| ---------- | ------------------------- |
+| 245686     | 4435 ns/op                |
+| 5431       | 221913 ns/op              |
+| 57         | 20505701 ns/op            |
+| 1          | 2076236080 ns/op          |
+| 1          | 217910336838 ns/op        |
+| 272680     | 4479 ns/op                |
+| 5535       | 223233 ns/op              |
+| 57         | 20534557 ns/op            |
+| 1          | 2074326401 ns/op          |
+| 1          | 219491639306 ns/op        |
+
+## Raw
+
 ```
 goos: linux
 goarch: amd64
