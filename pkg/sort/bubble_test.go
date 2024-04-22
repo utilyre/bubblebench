@@ -37,25 +37,25 @@ func testSort(t *testing.T, sort func(s []int)) {
 	}
 }
 
-func BenchmarkBubbleSort_n100(b *testing.B)     { benchmarkSort(b, 100) }
-func BenchmarkBubbleSort_n1000(b *testing.B)    { benchmarkSort(b, 1_000) }
-func BenchmarkBubbleSort_n10000(b *testing.B)   { benchmarkSort(b, 10_000) }
-func BenchmarkBubbleSort_n100000(b *testing.B)  { benchmarkSort(b, 100_000) }
-func BenchmarkBubbleSort_n1000000(b *testing.B) { benchmarkSort(b, 1_000_000) }
+func BenchmarkBubbleSort_n100(b *testing.B)     { benchmarkSort(b, BubbleSort, 100) }
+func BenchmarkBubbleSort_n1000(b *testing.B)    { benchmarkSort(b, BubbleSort, 1_000) }
+func BenchmarkBubbleSort_n10000(b *testing.B)   { benchmarkSort(b, BubbleSort, 10_000) }
+func BenchmarkBubbleSort_n100000(b *testing.B)  { benchmarkSort(b, BubbleSort, 100_000) }
+func BenchmarkBubbleSort_n1000000(b *testing.B) { benchmarkSort(b, BubbleSort, 1_000_000) }
 
-func BenchmarkFakeSort_n100(b *testing.B)     { benchmarkSort(b, 100) }
-func BenchmarkFakeSort_n1000(b *testing.B)    { benchmarkSort(b, 1_000) }
-func BenchmarkFakeSort_n10000(b *testing.B)   { benchmarkSort(b, 10_000) }
-func BenchmarkFakeSort_n100000(b *testing.B)  { benchmarkSort(b, 100_000) }
-func BenchmarkFakeSort_n1000000(b *testing.B) { benchmarkSort(b, 1_000_000) }
+func BenchmarkFakeSort_n100(b *testing.B)     { benchmarkSort(b, FakeSort, 100) }
+func BenchmarkFakeSort_n1000(b *testing.B)    { benchmarkSort(b, FakeSort, 1_000) }
+func BenchmarkFakeSort_n10000(b *testing.B)   { benchmarkSort(b, FakeSort, 10_000) }
+func BenchmarkFakeSort_n100000(b *testing.B)  { benchmarkSort(b, FakeSort, 100_000) }
+func BenchmarkFakeSort_n1000000(b *testing.B) { benchmarkSort(b, FakeSort, 1_000_000) }
 
-func benchmarkSort(b *testing.B, n int) {
+func benchmarkSort(b *testing.B, sort func([]int), n int) {
 	for range b.N {
 		b.StopTimer()
 		s := randomSlice(n)
 		b.StartTimer()
 
-		FakeSort(s)
+		sort(s)
 	}
 }
 
