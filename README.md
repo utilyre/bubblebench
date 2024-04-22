@@ -1,28 +1,33 @@
 # Bubble Bench
 
-## Table
+> Running on a **64-bit** **Linux** machine with **13th Gen Intel(R) Core(TM) i5-13500H** CPU
+
+- _N_: Length of array to be sorted.
+- _Growth_: Duration of current row devided by duration of previous row.
 
 ## Bubble Sort
 
-| N         | Iterations | Duration per operation | Growth |
-| --------- | ---------- | ---------------------- | ------ |
-| 100       | 245686     | 4435 ns/op             | -      |
-| 1,000     | 5431       | 221913 ns/op           | 50     |
-| 10,000    | 57         | 20505701 ns/op         | 92     |
-| 100,000   | 1          | 2076236080 ns/op       | 101    |
-| 1,000,000 | 1          | 217910336838 ns/op     | 105    |
+| N       | Operations | Duration           | Growth    |
+| ------- | ---------- | ------------------ | --------- |
+| 100     | 245686     | 4435 ns/op         | -         |
+| 1000    | 5431       | 221913 ns/op       | 5003.68%  |
+| 10000   | 57         | 20505701 ns/op     | 9240.42%  |
+| 100000  | 1          | 2076236080 ns/op   | 10125.17% |
+| 1000000 | 1          | 217910336838 ns/op | 10495.45% |
 
 ## Fake Sort
 
-| N         | Iterations | Duration per operation | Growth |
-| --------- | ---------- | ---------------------- | ------ |
-| 100       | 272680     | 4479 ns/op             | -      |
-| 1,000     | 5535       | 223233 ns/op           | 50     |
-| 10,000    | 57         | 20534557 ns/op         | 92     |
-| 100,000   | 1          | 2074326401 ns/op       | 101    |
-| 1,000,000 | 1          | 219491639306 ns/op     | 106    |
+| N       | Operations | Duration           | Growth    |
+| ------- | ---------- | ------------------ | --------- |
+| 100     | 272680     | 4479 ns/op         | -         |
+| 1000    | 5535       | 223233 ns/op       | 4983.99%  |
+| 10000   | 57         | 20534557 ns/op     | 9198.71%  |
+| 100000  | 1          | 2074326401 ns/op   | 10101.64% |
+| 1000000 | 1          | 219491639306 ns/op | 10581.35% |
 
-## Raw
+## Raw Results
+
+Here is the raw output of `go test ./... -bench=.` command
 
 ```
 goos: linux
